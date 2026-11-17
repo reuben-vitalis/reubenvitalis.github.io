@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>reubenvitalis | Cybersecurity Consultant</title>
+    <title>Reuben Vitalis | Software Engineer &amp; Cybersecurity</title>
     <style>
         /* CSS Reset & Variables */
         :root {
@@ -283,6 +283,45 @@
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
+
+        /* Added: headline under the name, stacked cards, certifications, leadership, on-request label */
+        .hero-headline {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 1rem !important;
+            margin-bottom: 1rem !important;
+        }
+
+        .edu-card + .edu-card { margin-top: 1rem; }
+
+        .cert-list { list-style: none; font-size: 0.9rem; color: var(--text-secondary); }
+        .cert-list li { padding: 0.35rem 0; border-bottom: 1px solid var(--border); }
+        .cert-list li:last-child { border-bottom: none; }
+        .cert-list strong { color: var(--text-primary); font-weight: 600; }
+
+        .lead-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+        .lead-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+        .lead-card h3 { font-size: 1.1rem; margin-bottom: 0.2rem; }
+        .lead-card h4 { color: var(--accent); font-weight: 500; font-size: 0.95rem; margin-bottom: 0.8rem; }
+        .lead-card ul { padding-left: 1.1rem; color: var(--text-secondary); font-size: 0.92rem; }
+        .lead-card li { margin-bottom: 0.4rem; }
+
+        .on-request { color: var(--text-secondary); font-size: 0.9rem; font-style: italic; }
+
+        @media (max-width: 600px) {
+            #hero h1 { font-size: 2.8rem; }
+            .nav-links a { margin-left: 0.9rem; font-size: 0.9rem; }
+            .projects-grid, .lead-grid { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
@@ -294,19 +333,21 @@
             <div class="nav-links">
                 <a href="#about">About</a>
                 <a href="#projects">Projects</a>
-                <a href="mailto:reubenvitalis94@gmail.com">Contact</a>
+                <a href="#leadership">Leadership</a>
+                <a href="mailto:reubenvitalis203@gmail.com">Contact</a>
             </div>
         </div>
     </nav>
 
     <div class="container">
         
-        <!-- Hero Section (Updated) -->
+        <!-- Hero Section -->
         <section id="hero">
             <div class="hero-text">
                 <div class="status-badge">AI in Cybersecurity</div>
                 <h1>Hey!<br> This is Reuben. </h1>
-                <p>I'm a CS student at Moi university specializing in cybercrime prevention using AI. I write clean code, optimize database queries, and build AI products that solve actual cybersecurity threats.</p>
+                <p class="hero-headline">Software Engineer | Digital Forensic Studies | Cybersecurity | Developer</p>
+                <p>Aspiring software engineer with a background in forensic and criminal justice, applying AI and Python-based machine learning to leverage humanity by bridging contemporary human incapabilities with technical engineering solutions.</p>
                 <div class="cta-buttons">
                     <a href="https://drive.google.com/file/d/125_lSwQlM0kRRM02VusVYOxF0FGZqAYj/view?usp=drive_link" class="btn btn-primary">Download Resume</a> 
                     <a href="https://github.com/reuben-vitalis" target="_blank" class="btn btn-secondary">GitHub Profile</a>
@@ -315,7 +356,7 @@
             
             <!-- Dynamic Collage Image -->
             <div class="hero-image">
-                <img src="image/Gemini_Generated_Image_yqfiq6yqfiq6yqfi.png" alt="a cybersecurity visualization image.">
+                <img src="image/Gemini_Generated_Image_yqfiq6yqfiq6yqfi.png" alt="A cybersecurity visualization image.">
             </div>
         </section>
 
@@ -325,61 +366,119 @@
             <!-- Education -->
             <div>
                 <h2 class="section-title">Background</h2>
+
                 <div class="edu-card">
-                    <h3>MOI University</h3>
-                    <h4>B.A.Criminal Justice and Security studies • Expected MAY 2028</h4>
+                    <h3>Moi University</h3>
+                    <h4>Bachelor of Arts in Penology and Security Studies (in progress) &bull; Sept 2024 &ndash; Present</h4>
                     <p class="coursework">
-                        <strong>Relevant Coursework:</strong> Data Structures & Algorithms, forensic science, criminal psychology, Computer Networking, AI in Cybersecurity, Database Management Systems, and Ethical Hacking.
+                        <strong>Coursework:</strong> Criminal Procedure, Offender Profiling, DNA Forensics, Media Criminality.
                     </p>
+                </div>
+
+                <div class="edu-card">
+                    <h3>AI in Cybersecurity Bootcamp &mdash; Wecncode</h3>
+                    <h4>Jun 2026 &ndash; Sept 2026</h4>
+                    <p class="coursework">
+                        <strong>Coursework:</strong> MITRE ATLAS &amp; Threat Assessment, Adversarial Training &amp; Red Teaming, LLM Security (OWASP Top 10) &amp; Prompt Injection, Data Poisoning Detection &amp; Backdoor Attacks.
+                    </p>
+                </div>
+
+                <div class="edu-card">
+                    <h3>Certifications</h3>
+                    <ul class="cert-list">
+                        <li><strong>Wecncode:</strong> AI in Cybersecurity Bootcamp Certification</li>
+                        <li><strong>Anthropic Academy:</strong> Claude 101 &bull; AI Fluency &bull; Building with the Claude API &bull; Introduction to Claude Cowork</li>
+                        <li><strong>Cisco Networking Academy:</strong> Core Generative AI Skills &bull; Introduction to Cybersecurity</li>
+                    </ul>
                 </div>
             </div>
 
             <!-- Tech Stack -->
             <div>
                 <h2 class="section-title">Tech Stack</h2>
-                
+
                 <div class="skill-group">
                     <h4>Languages</h4>
                     <div class="skill-tags">
                         <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Bash (Linux command line)</span>
                         <span class="skill-tag">HTML</span>
                         <span class="skill-tag">CSS</span>
-                        <span class="skill-tag">SQL</span>
                     </div>
                 </div>
 
                 <div class="skill-group">
-                    <h4>Frameworks & ML</h4>
+                    <h4>Libraries &amp; ML</h4>
                     <div class="skill-tags">
-                        <span class="skill-tag">PyTorch</span>
-                        <span class="skill-tag">Pandas</span>
                         <span class="skill-tag">scikit-learn</span>
-                        <span class="skill-tag">Naive Bayes</span>
-                        <span class="skill-tag">Seq2seq /LSTM Models</span>
-                        <span class="skill-tag">FastAPI</span>
+                        <span class="skill-tag">Pandas</span>
+                        <span class="skill-tag">NumPy</span>
+                        <span class="skill-tag">PyTorch</span>
+                        <span class="skill-tag">Transformers</span>
+                        <span class="skill-tag">LangChain</span>
+                        <span class="skill-tag">Matplotlib</span>
+                        <span class="skill-tag">Django</span>
+                        <span class="skill-tag">Image Classification</span>
                     </div>
                 </div>
 
                 <div class="skill-group">
-                    <h4>Cybersecurity Tools</h4>
+                    <h4>Cybersecurity Skills</h4>
                     <div class="skill-tags">
-                        <span class="skill-tag">MITRE ATT&CK Navigator</span>
                         <span class="skill-tag">MITRE ATLAS</span>
-                        <span class="skill-tag">Blue Team Operations</span>
-                        <span class="skill-tag">Git / GitHub Actions</span>
-                        <span class="skill-tag">Threat Detection</span>
-                        <span class="skill-tag">Adversarial Machine Learning / Data Poisoning Analysis</span>
+                        <span class="skill-tag">OWASP LLM Top 10</span>
+                        <span class="skill-tag">Threat Modeling</span>
+                        <span class="skill-tag">CIA Triad</span>
+                        <span class="skill-tag">Red Teaming</span>
+                        <span class="skill-tag">SOC Analysis</span>
+                        <span class="skill-tag">Adversarial ML</span>
+                        <span class="skill-tag">Backdoor Detection</span>
+                        <span class="skill-tag">LLM Red Teaming</span>
+                        <span class="skill-tag">Deepfake Detection</span>
+                        <span class="skill-tag">Phishing Analysis</span>
+                        <span class="skill-tag">Cryptography</span>
                     </div>
                 </div>
 
                 <div class="skill-group">
-                    <h4>Tools & Platforms</h4>
+                    <h4>Security Tools</h4>
                     <div class="skill-tags">
-                        <span class="skill-tag">Git / GitHub Actions</span>
-                        <span class="skill-tag">Google Colab</span>
-                        <span class="skill-tag">Graphviz</span>
+                        <span class="skill-tag">Wireshark</span>
+                        <span class="skill-tag">OpenSSL</span>
+                        <span class="skill-tag">Garak</span>
+                        <span class="skill-tag">NeMo Guardrails</span>
+                        <span class="skill-tag">ModelScan</span>
+                        <span class="skill-tag">MITRE ATLAS Navigator</span>
+                        <span class="skill-tag">Linux</span>
                     </div>
                 </div>
+
+                <div class="skill-group">
+                    <h4>AI Toolkits</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Zapier</span>
+                        <span class="skill-tag">Gemini</span>
+                        <span class="skill-tag">OpenAI</span>
+                        <span class="skill-tag">Claude</span>
+                        <span class="skill-tag">Miro</span>
+                        <span class="skill-tag">Hugging Face</span>
+                        <span class="skill-tag">Teachable Machine</span>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <h4>Developer Tools</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">VS Code</span>
+                        <span class="skill-tag">Jupyter</span>
+                        <span class="skill-tag">Google Colab</span>
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">GitHub</span>
+                        <span class="skill-tag">GitLab</span>
+                        <span class="skill-tag">Docker</span>
+                    </div>
+                </div>
+
             </div>
 
         </section>
@@ -389,52 +488,101 @@
             <h2 class="section-title">Featured Projects</h2>
             
             <div class="projects-grid">
-                
+
                 <!-- Project 1 -->
                 <div class="project-card">
-                    <h3>DNA Comparison & Recognition System</h3>
+                    <h3>DNASeq - A DNA Comparison &amp; Recognition System</h3>
                     <div class="skill-tags" style="margin-bottom: 1rem;">
-                        <span class="skill-tag" style="background: transparent; border: none; padding: 0; color: var(--accent);">Python • PyTorch • AWS</span>
+                        <span class="skill-tag" style="background: transparent; border: none; padding: 0; color: var(--accent);">Python &bull; PyTorch &bull; AWS</span>
                     </div>
-                    <p class="project-desc">A forensic tool that uses camera-based facial recognition as a candidate pre-filter before running DNA profiling, registry, registry lookup, and comparison for a match. supports large-scale batch retrieval, vectorized/parallel matching, and allele-maker indexing.</p>
+                    <p class="project-desc">A forensic tool that uses camera-based facial recognition as a pre-filter before running DNA profiling and registry lookup.</p>
                     <div class="impact-bullet">
                         <strong>Impact:</strong> v2 architecture finalized - batch retrieval, vectorized matching, and ranked shortlist output.
                     </div>
                     <div class="project-links">
-                        <a href="#" target="_blank">documentation &rarr;</a>
+                        <span class="on-request">Code available on request</span>
                     </div>
                 </div>
 
                 <!-- Project 2 -->
                 <div class="project-card">
-                    <h3>LALANGO AI - Low-Resource Language Translation API</h3>
+                    <h3>Social Sentinel - NLP Tool for Detection of Spams</h3>
                     <div class="skill-tags" style="margin-bottom: 1rem;">
-                        <span class="skill-tag" style="background: transparent; border: none; padding: 0; color: var(--accent);">Node.js • PostgreSQL • Docker</span>
+                        <span class="skill-tag" style="background: transparent; border: none; padding: 0; color: var(--accent);">Python &bull; scikit-learn &bull; Gradio &bull; Docker</span>
                     </div>
-                    <p class="project-desc">A community-driven NLP platform for translating regional dialects, built from scratch by students. Open source backend contribution implementing the Encoder forward pass, Decoder step-wise logic, and full Seq2SeqLSTM forward pipeline</p>.</p>
-                    <div class="impact-bullet">
-                        <strong>Impact:</strong> Handled 1,000+ concurrent requests with sub-100ms response times during load testing.
-                    </div>
+                    <p class="project-desc">AI-powered NLP tool that detects zero day social engineering tactics in text messages and emails.</p>
                     <div class="project-links">
-                        <a href="https://github.com/reuben-vitalis/La-Lango" target="_blank">Source Code &rarr;</a>
+                        <a href="https://github.com/Wecncode/Social-Sentinel" target="_blank">Source Code &rarr;</a>
                     </div>
                 </div>
 
                 <!-- Project 3 -->
                 <div class="project-card">
-                    <h3>Spam Classifier</h3>
+                    <h3>LALANGO API - Low-Resource Language Translation API</h3>
                     <div class="skill-tags" style="margin-bottom: 1rem;">
-                        <span class="skill-tag" style="background: transparent; border: none; padding: 0; color: var(--accent);">Python • Scikit-learn • Pandas</span>
+                        <span class="skill-tag" style="background: transparent; border: none; padding: 0; color: var(--accent);">Python &bull; PyTorch &bull; FastAPI</span>
                     </div>
-                    <p class="project-desc">Built and stress-tested a Multinomial Naive Bayes spam classifier using real Gmail emails collected in Kenya. Ran two experiments: train-test split sensitivity, and a simulated data poisoning attack — corrupting training labels to measure model degradation.</p>
-                    <div class="impact-bullet">
-                        <strong>Impact:</strong>Demonstrated that 20% label corruption drops accuracy from 100% to 75%; 50% corruption reduces the model to coin-flip performance — an empirical demonstration of adversarial ML risk.
-                    </div>
+                    <p class="project-desc">A community-driven NLP platform for translating regional dialects.</p>
                     <div class="project-links">
-                        <a href="https://github.com/reuben-vitalis/spam-classifier-project-analysis-2026" target="_blank">Source Code &rarr;</a>
+                        <a href="https://github.com/wecncodecrew/La-Lango" target="_blank">Source Code &rarr;</a>
                     </div>
                 </div>
 
+                <!-- Project 4 -->
+                <div class="project-card">
+                    <h3>Zero Trust - A Multinomial Naive Bayes Spam Classifier</h3>
+                    <div class="skill-tags" style="margin-bottom: 1rem;">
+                        <span class="skill-tag" style="background: transparent; border: none; padding: 0; color: var(--accent);">Python &bull; scikit-learn &bull; Pandas</span>
+                    </div>
+                    <p class="project-desc">A python-based application that checks and classifies spam mail and also tests for data accuracy.</p>
+                    <div class="impact-bullet">
+                        <strong>Impact:</strong> Demonstrated that 20% label corruption drops accuracy from 100% to 75%; 50% corruption reduces the model to coin-flip performance - an empirical demonstration of adversarial ML risk.
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/reuben-vitalis/Spam-Classifier-Analysis-Project-2026" target="_blank">Source Code &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card">
+                    <h3>Vitality - Multi-Detector for Cyber Learners</h3>
+                    <div class="skill-tags" style="margin-bottom: 1rem;">
+                        <span class="skill-tag" style="background: transparent; border: none; padding: 0; color: var(--accent);">Python &bull; Gradio &bull; scikit-learn &bull; PyTorch &bull; Hugging Face</span>
+                    </div>
+                    <p class="project-desc">A web application for detection of watermarks, AI-generated images or deepfakes, and spam mails and phishing messages.</p>
+                    <div class="impact-bullet">
+                        <strong>Impact:</strong> 92.4% spam &amp; phishing detection accuracy, HMAC-signed watermark verification, and deployed live on Hugging Face.
+                    </div>
+                    <div class="project-links">
+                        <a href="https://huggingface.co/spaces/R1532/Vitality" target="_blank">Live Demo &rarr;</a>
+                        <a href="https://github.com/reuben-vitalis/Vitality" target="_blank">Source Code &rarr;</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Leadership Section -->
+        <section id="leadership">
+            <h2 class="section-title">Leadership</h2>
+
+            <div class="lead-grid">
+                <div class="lead-card">
+                    <h3>Chairperson, Moi University Criminal Justice Students' Organization</h3>
+                    <h4>Jan 2026 &ndash; Present &bull; Eldoret, Kenya</h4>
+                    <ul>
+                        <li>Lead a student organization at Moi University focused on criminal justice engagement and peer development.</li>
+                        <li>Organized and ran a cybersecurity awareness event, guiding members and peers on online safety practices.</li>
+                    </ul>
+                </div>
+
+                <div class="lead-card">
+                    <h3>Vice Chairperson, Moi University Criminal Justice Students' Organization</h3>
+                    <h4>Sept 2025 &ndash; Dec 2025 &bull; Eldoret, Kenya</h4>
+                    <ul>
+                        <li>Co-led the organization and organized a one-day learning activity across 3 prisons, coordinating logistics and engagement with correctional facilities.</li>
+                    </ul>
+                </div>
             </div>
         </section>
 
@@ -444,11 +592,11 @@
     <footer>
         <p>&copy; 2026 Reuben Vitalis. Built from scratch.</p>
         <div style="margin-top: 1rem;">
-            <a href="https://github.com/reuben-vitalis" style="color: var(--text-secondary); text-decoration: none; margin: 0 0.5rem;">GitHub</a> • 
-            <a href="https://linkedin.com/in/reuben-vitalis" style="color: var(--text-secondary); text-decoration: none; margin: 0 0.5rem;">LinkedIn</a>
+            <a href="https://github.com/reuben-vitalis" style="color: var(--text-secondary); text-decoration: none; margin: 0 0.5rem;">GitHub</a> &bull; 
+            <a href="https://linkedin.com/in/reuben-vitalis" style="color: var(--text-secondary); text-decoration: none; margin: 0 0.5rem;">LinkedIn</a> &bull; 
+            <a href="mailto:reubenvitalis203@gmail.com" style="color: var(--text-secondary); text-decoration: none; margin: 0 0.5rem;">Email</a>
         </div>
     </footer>
 
 </body>
 </html>
-
